@@ -1,0 +1,75 @@
+
+
+http://192.168.1.28:7678/nservice/
+Application-URL: http://192.168.1.28:8080/ws/app/
+
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0" xmlns:dlna="urn:schemas-dlna-org:device-1-0" xmlns:sec="http://www.sec.co.kr/dlna">
+   <specVersion>
+      <major>1</major>
+      <minor>0</minor>
+   </specVersion>
+   <device>
+      <deviceType>urn:dial-multiscreen-org:device:dialreceiver:1</deviceType>
+      <friendlyName>__________</friendlyName>
+      <manufacturer>Samsung Electronics</manufacturer>
+      <manufacturerURL>http://www.samsung.com/sec</manufacturerURL>
+      <modelDescription>Samsung DTV RCR</modelDescription>
+      <modelName>____________</modelName>
+      <modelNumber>1.0</modelNumber>
+      <modelURL>http://www.samsung.com/sec</modelURL>
+      <serialNumber>____________</serialNumber>
+      <UDN>uuid:11111111-1111-1111-1111-111111111111</UDN>
+      <sec:deviceID>_______________</sec:deviceID>
+      <sec:ProductCap>Resolution:1920X1080,Tizen,Y2017</sec:ProductCap>
+      <serviceList>
+         <service>
+            <serviceType>urn:dial-multiscreen-org:service:dial:1</serviceType>
+            <serviceId>urn:dial-multiscreen-org:serviceId:dial</serviceId>
+            <controlURL>/RCR/control/dial</controlURL>
+            <eventSubURL>/RCR/event/dial</eventSubURL>
+            <SCPDURL>dial.xml</SCPDURL>
+         </service>
+      </serviceList>
+      <sec:Capabilities>
+         <sec:Capability name="samsung:multiscreen:1" port="8001" location="/ms/1.0/" />
+      </sec:Capabilities>
+   </device>
+</root>
+
+http://192.168.1.28:7678/nservice/RCR/control/dial/dial.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+   <specVersion>
+      <major>1</major>
+      <minor>0</minor>
+   </specVersion>
+   <actionList>
+      <action>
+         <name>SendKeyCode</name>
+         <argumentList>
+            <argument>
+               <name>KeyCode</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_KeyCode</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>KeyDescription</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_KeyDescription</relatedStateVariable>
+            </argument>
+         </argumentList>
+      </action>
+   </actionList>
+   <serviceStateTable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_KeyCode</name>
+         <dataType>ui4</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_KeyDescription</name>
+         <dataType>string</dataType>
+      </stateVariable>
+   </serviceStateTable>
+</scpd>

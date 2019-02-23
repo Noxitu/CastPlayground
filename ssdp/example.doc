@@ -1,0 +1,27 @@
+
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1800
+DATE: Thu, 21 Feb 2019 19:32:15 GMT
+EXT:
+LOCATION: http://192.168.1.28:9197/dmr
+SERVER: Samsung-Linux/4.1, UPnP/1.0, Samsung_UPnP_SDK/1.0
+ST: upnp:rootdevice
+USN: uuid:11111111-1111-1111-1111-111111111111::upnp:rootdevice
+Content-Length: 0
+BOOTID.UPNP.ORG: 8
+
+
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+CACHE-CONTROL: max-age=1800
+DATE: Thu, 21 Feb 2019 19:45:35 GMT
+LOCATION: http://192.168.1.28:9197/dmr
+NT: urn:schemas-upnp-org:service:AVTransport:1
+NTS: ssdp:alive
+SERVER: SHP, UPnP/1.0, Samsung UPnP SDK/1.0
+USN: uuid:11111111-1111-1111-1111-111111111111::urn:schemas-upnp-org:service:AVTransport:1
+
+
+
+http://192.168.1.28:7678/nservice/
+http://192.168.1.28:9197/dmr
